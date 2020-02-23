@@ -10,7 +10,7 @@
 
     <title>Document</title>
 </head>
-<body>
+<body onload="affichermoto()">
     <header>
         <div class="logo">
             
@@ -30,30 +30,57 @@
                     <input type="checkbox" id="check">
                     <ul class="secondul">
                     <li ><a href="index.html">Home</a></li>
-                    <li><a href="#" class="active" href="#">inscription</a></li>
-                    <li><a href="res.html">reservation</a></li>
+                    <li><a href="sing.html"  href="#">inscription</a></li>
+                    <li><a href="#" class="active">reservation</a></li>
                 </ul>
             
             </nav>
          
        
 
-    </header>
+    </header><br><br>
     
     <div id="mai">
         <div class="con1">
+        <div class="con-here">
+            <img id="here" class="here">
+        </div>
+
             <div class="form">
+                
                 <form action="" class="forme1">
                     <input type="text" id="name" placeholder="enter voter nom" onkeyup="validename()" >
                     <div id="erreur1"></div>
                     <input type="text" id="email" placeholder="enter voter email" onkeyup="validemail()">
                     <div id="erreur2"></div>
-                    <input type="password" id="pass1" placeholder="enter voter mot de passe" onkeyup="validpass()">
+                    <!-- <input type="password" id="pass1" placeholder="enter voter mot de passe" onkeyup="validpass()">
                     <div id="erreur3"></div>
                     <input type="password" id="pass2" placeholder="Confirmation mot de passe" onkeyup="revalidpass()">
-                    <div id="erour"></div>
-                    <input type="button" value="submit" onclick="validation()" id="sub">
+                    <div id="erour"></div> -->
+                    <input type="text" id="mobile" placeholder="entre votre numero" onkeyup="validenum()" maxlength="10">
+                    <div id="erreur4"></div>
+
+
+                    <label for="username">Votre année de naissance</label>
+                    <input type="date" max="2001-12-31" placeholder="écrire votre année de naissance" name="naissance" id="naissance">
+                
+                <div class="input-inscription">
+                    <label for="username">Période de location</label>
+                    <label for="periode1" id="periode-label">DATE DE départ</p></label>
+                    <input type="date" placeholder="écrire nombre des jours de location" name="periode1" id="date1" min="2020-02-17">
+                    <label for="periode2" id="periode-label">DATE DE retour</label>
+                    <input type="date" placeholder="écrire nombre des jours de location" name="periode2" id="date2">
+                
+                <div class="input-inscription">
+                    <label for="username">Nombre des personnes</label>
+                    <select id="per-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        
+                    </select>
+                    <input type="button" value="submit" onclick="validationre2()" id="sub">
                 </form>
+                </div></div>
              </div>
         </div>
         
@@ -70,30 +97,21 @@
         </div>
 </div>
 <!-- start 2em partie  -->
-<div class="row">
-    <div class="colon">
-        <div class="col1">
-            <img src="images/tmax.jpg" alt="tmax" width="75%" height="75%">
-            <h3>Scooters 50 cm³/maxi Scooters</h3>
-            <button>louer cette catégorie</button>
-        </div>
+<div class="popup" id="popup-id">
+    <h1>des informations sur votre réservation merci pour votre confiance</h1>
+   
+<img  class="here" > 
+    <div></div>
+    <div class="info" >
+        <h1>votre nom est :<p id="popup-name"></p></h1>
+        <h1>votre age est :<p id="popup-age"></p> ans</h1>
+        <h1>la periode de location est :<p id="popup-periode"></p> jour(s)</h1>
+        <h1>nombre des personnes est :<p id="popup-personne"></p> personne(s)</h1>
+        
+        
     </div>
-    <div class="colon">
-        <div class="col1">
-            <img src="images/mt09.jpg" alt="tmax" width="70%" height="70%">
-            <h3>Hyper Naked / Supersport </h3>
-            <button>louer cette catégorie</button>
-        </div>
-    </div>
-    <div class="colon">
-        <div class="col1">
-            <img src="images/quad.jpg" alt="tmax" width="70%" height="70%">
-            <h3>Quad loisirs & compétition</h3>
-            <button >louer cette catégorie</button>
-        </div>
-    </div>
-
 </div>
+<!--  -->
 <!-- end 2em partie -->
 <!-- start footer -->
 <footer>

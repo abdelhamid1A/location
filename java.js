@@ -39,7 +39,7 @@ function prewImage(){
   function validename(){
     var name = document.getElementById('name').value;
     var er = document.getElementById('erreur1');
-    if(name.match(/^[A-Za-z ]{7,18}$/)){
+    if(name.match(/^[A-Za-z]{7,18}$/)){
       text = 'le nom est valid';
       er.innerHTML = text;
       er.style.color = "green";
@@ -121,3 +121,73 @@ function validpass(){
     }
   }
     // end submit validation
+
+
+    // start res
+    function res(i)
+{
+    sessionStorage.setItem("pos",document.getElementsByClassName('moto1')[i].src);
+    window.location.href="res2.html";
+    return src;
+}
+var gr;
+function affichermoto()
+{
+  document.getElementById('here').src=sessionStorage.getItem("pos");
+ gr  = sessionStorage.getItem("pos");
+ 
+ }
+// start validation de numero de tele
+function validenum(){
+  var numero = document.getElementById('mobile').value;
+  var er = document.getElementById('erreur4');
+  if(numero.match(/(?=.*(05|06|07))[0-9]{10}/)){
+    text = "votre numero est valid";
+    er.innerHTML = text;
+    er.style.color = "green";
+    return true;
+  } else{
+    
+      text = "votre numero est n'est pas valid";
+      er.innerHTML = text;
+      er.style.color = "red";
+      return false;
+    
+  }
+
+}
+// end validation de numero de tele
+// sebmit res2
+function validationre2(){
+  var pop = document.getElementById("popup-id");
+  var name = document.getElementById('name').value;
+  var nowDate = new Date(Date.now());
+  var dateBirth = new Date(document.getElementById('naissance').value);
+  var thisYear = nowDate.getFullYear();
+  var yearOfBirth = dateBirth.getFullYear();
+  var age = thisYear - yearOfBirth;
+  var firstDat = new Date(document.getElementById('date1').value);
+    var lastDat = new Date(document.getElementById('date2').value);
+    
+    var periode = (lastDat - firstDat) / (3600*1000*24);
+    var persons = document.getElementById('per-select').value;
+
+  document.getElementById('popup-name').innerHTML = name;
+  document.getElementById('popup-age').innerText = age;
+  document.getElementById('popup-periode').innerText = periode;
+  document.getElementById('popup-personne').innerText = persons;
+
+  
+  
+  if(validename()==true && validemail()==true && validenum()==true ){
+
+    console.log( document.getElementById('here').src);
+    document.getElementsByClassName("here")[1].src = gr;
+    pop.style.display = "block";
+    
+    
+
+  }else{
+    alert("verifie votre information")
+  }
+}
