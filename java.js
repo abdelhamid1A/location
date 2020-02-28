@@ -39,7 +39,7 @@ function prewImage(){
   function validename(){
     var name = document.getElementById('name').value;
     var er = document.getElementById('erreur1');
-    if(name.match(/^[A-Za-z]{7,18}$/)){
+    if(name.match(/^[A-Za-z]+ [A-Za-z]{3,}$/)){
       text = 'le nom est valid';
       er.innerHTML = text;
       er.style.color = "green";
@@ -141,7 +141,7 @@ function affichermoto()
 function validenum(){
   var numero = document.getElementById('mobile').value;
   var er = document.getElementById('erreur4');
-  if(numero.match(/(?=.*(05|06|07))[0-9]{10}/)){
+  if(numero.match(/(?=.*(05|06|07))[0-9]{10,}/)){
     text = "votre numero est valid";
     er.innerHTML = text;
     er.style.color = "green";
@@ -177,9 +177,11 @@ function validationre2(){
   document.getElementById('popup-periode').innerText = periode;
   document.getElementById('popup-personne').innerText = persons;
 
+  // if(periode<1){
+  //   alert(verifie la duree de reservtion);
+  // }
   
-  
-  if(validename()==true && validemail()==true && validenum()==true ){
+  if(validename()==true && validemail()==true && validenum()==true && verification()==true){
 
     console.log( document.getElementById('here').src);
     document.getElementsByClassName("here")[1].src = gr;
@@ -191,3 +193,19 @@ function validationre2(){
     alert("verifie votre information")
   }
 }
+// start function de verification la duree de location 
+function verification(){
+  var firstDat = new Date(document.getElementById('date1').value);
+  var lastDat = new Date(document.getElementById('date2').value);
+  
+  var periode = (lastDat - firstDat) / (3600*1000*24);
+  if(periode<1){
+    alert("verifie la duree de reservation");
+    return false;
+  }
+  else{
+    return true;
+  }
+
+}
+// end function de verification la duree de location
