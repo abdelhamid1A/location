@@ -209,3 +209,12 @@ function verification(){
 
 }
 // end function de verification la duree de location
+// start partie jQ 
+$('#btncon').click(function (e) { 
+  $(".confir").show(2000,);
+  // $(".confir").animate({
+  //   left:'35%',
+  //   top:'-300px'
+  // });
+  
+});

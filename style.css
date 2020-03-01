@@ -314,6 +314,9 @@ footer .row2 .colon2 ul li a:hover {
 
 .form {
   margin-left: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .form .forme1 {
@@ -344,7 +347,7 @@ footer .row2 .colon2 ul li a:hover {
 
 @media (max-width: 500px) {
   .form {
-    margin-left: 35%;
+    margin-left: 5%;
   }
 }
 
@@ -377,6 +380,23 @@ footer .row2 .colon2 ul li a:hover {
           box-shadow: 1px -1px 8px 10px #888888;
 }
 
+#popup-id button {
+  background-color: #00a8ff;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  color: #fff;
+  margin: 15px 0;
+  width: 300px;
+}
+
+#popup-id button:hover {
+  color: #000;
+  background: none;
+  border: 2px solid #00a8ff;
+  border-radius: 3px;
+}
+
 #popup-id img {
   width: 100%;
   height: 100%;
@@ -385,5 +405,13 @@ footer .row2 .colon2 ul li a:hover {
 #popup-id .info h1 {
   font-weight: bold;
   font-family: 'Zhi Mang Xing', cursive;
+}
+
+.confir {
+  color: #fff;
+  display: none;
+  position: relative;
+  margin-bottom: 45px;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
